@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Netguard: A Comprehensive Network Security Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> An all-in-one, containerized solution for live network traffic monitoring, threat detection, and security analysis, orchestrated with Docker and powered by the Elastic Stack.
 
-## Available Scripts
+This project provides a powerful and interactive dashboard to visualize network traffic, detect intrusions, and analyze security events in real-time. It leverages a suite of best-in-class open-source tools, all running seamlessly as Docker containers.
 
-In the project directory, you can run:
+## ✨ Key Features
 
-### `npm start`
+-   **Live Packet Analysis:** Captures and analyzes network traffic in real-time using Tshark, Zeek, and Suricata.
+-   **Intrusion Detection System (IDS):** Utilizes Suricata for high-performance, rule-based threat and anomaly detection.
+-   **Rich Traffic Logs:** Generates detailed and structured logs for various protocols (HTTP, DNS, SSL, etc.) using Zeek.
+-   **Interactive Frontend:** A modern, responsive dashboard built with React to visualize alerts, network flows, and security metrics.
+-   **Robust Backend:** Powered by a high-performance FastAPI backend to serve data to the frontend.
+-   **Centralized Data Hub:** Aggregates logs and alerts from all services into Elasticsearch using Filebeat for powerful searching and analytics.
+-   **Automated CI/CD:** Uses GitHub Actions to automatically build, test, and deploy the application, ensuring code quality and stability.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Technology Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+| Category               | Technologies                                        |
+| ---------------------- | --------------------------------------------------- |
+| **Orchestration**      | `Docker`, `Docker Compose`                          |
+| **Backend**            | `Python`, `FastAPI`, `PostgreSQL`                   |
+| **Frontend**           | `React`, `JavaScript`, `Tailwind CSS`               |
+| **Data & Visualization** | `Elasticsearch`, `Kibana`, `Filebeat`               |
+| **Network Analysis**   | `Suricata` (IDS), `Zeek` (NSM), `Tshark` (Packet Capture) |
+| **CI/CD**              | `GitHub Actions`                                    |
 
-### `npm test`
+## 🚀 Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these instructions to set up and run the Netguard dashboard on your local machine.
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-   [Git](https://git-scm.com/)
+-   [Docker](https://docs.docker.com/get-docker/)
+-   [Docker Compose](https://docs.docker.com/compose/install/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clone the Repository
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+First, clone the project from GitHub to your local machine.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/xoblite2905/netguard_dashboard.git
+cd netguard_dashboard
