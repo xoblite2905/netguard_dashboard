@@ -54,7 +54,7 @@ jobs:
       - name: Health Check - Check if backend API is responsive
         run: |
           echo "Attempting to connect to the backend API..."
-          curl --fail http://localhost:8000/docs || exit 1
+          curl --fail http://localhost:8080/docs || exit 1
 
       - name: Health Check - Check if Elasticsearch is responsive
         run: |
