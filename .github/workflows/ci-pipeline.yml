@@ -48,7 +48,7 @@ jobs:
 
       - name: Display Backend Service Logs
         # Check your docker-compose.yml for the correct service name! (e.g., 'backend', 'api', 'web')
-        run: docker compose logs backend
+        run: docker compose logs netguard_app
 
       # --- HEALTH CHECKS ---
       - name: Health Check - Check if backend API is responsive
