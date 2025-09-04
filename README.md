@@ -42,3 +42,5 @@ First, clone the project from GitHub to your local machine.
 ```bash
 git clone https://github.com/xoblite2905/netguard_dashboard.git
 cd netguard_dashboard
+chmod +x exucute.sh
+bash exucute.sh
