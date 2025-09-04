@@ -4,7 +4,7 @@
 
 This project provides a powerful and interactive dashboard to visualize network traffic, detect intrusions, and analyze security events in real-time. It leverages a suite of best-in-class open-source tools, all running seamlessly as Docker containers.
 
-## ✨ Key Features
+## Key Features
 
 -   **Live Packet Analysis:** Captures and analyzes network traffic in real-time using Tshark, Zeek, and Suricata.
 -   **Intrusion Detection System (IDS):** Utilizes Suricata for high-performance, rule-based threat and anomaly detection.
@@ -14,7 +14,7 @@ This project provides a powerful and interactive dashboard to visualize network 
 -   **Centralized Data Hub:** Aggregates logs and alerts from all services into Elasticsearch using Filebeat for powerful searching and analytics.
 -   **Automated CI/CD:** Uses GitHub Actions to automatically build, test, and deploy the application, ensuring code quality and stability.
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Category               | Technologies                                        |
 | ---------------------- | --------------------------------------------------- |
@@ -25,7 +25,7 @@ This project provides a powerful and interactive dashboard to visualize network 
 | **Network Analysis**   | `Suricata` (IDS), `Zeek` (NSM), `Tshark` (Packet Capture) |
 | **CI/CD**              | `GitHub Actions`                                    |
 
-## 🚀 Getting Started
+## Getting Started
 
 Follow these instructions to set up and run the Netguard dashboard on your local machine.
 
