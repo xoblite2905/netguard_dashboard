@@ -1,0 +1,11 @@
+pcap-log:
+  enabled: yes
+  filename: suricata.pcap
+  limit: 256mb
+  max-files: 20
+  # Note: The 'dir' is relative to the default logging directory.
+  dir: pcaps
+
+# 2. Enable the UNIX command socket for debugging with 'suricatasc'.
+unix-command:
+  enabled: yes

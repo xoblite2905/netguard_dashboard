@@ -1,0 +1,61 @@
+# ============================== Filebeat inputs ===============================
+filebeat.inputs:
+
+- type: filestream
+  id: zeek-logs
+  enabled: true
+  paths:
+    - /var/log/zeek/**/*.log
+  fields:
+    log_source: zeek
+  fields_under_root: true
+  parsers:
+    - ndjson:
+        keys_under_root: true
+        add_error_key: true
+        ignore_decoding_error: true
+
+  processors:
+    - rename:
+        fields:
+          - from: "service"
+            to: "zeek.service" # Renaming it prevents the type conflict
+        ignore_missing: true  # If a log doesn't have a service field, don't fail
+        fail_on_error: false
+
+
+
+- type: filestream
+  id: suricata-logs
+  enabled: true
+  paths:
+    - /var/log/suricata/eve.json
+  fields:
+    log_source: suricata
+  fields_under_root: true
+  parsers:
+    - ndjson:
+        keys_under_root: true
+        add_error_key: true
+        ignore_decoding_error: true
+
+# ======================= Elasticsearch template setting =======================
+# We are providing the name and pattern that Filebeat requires.
+setup.template:
+  name: "netguard"
+  pattern: "netguard-*"
+  settings:
+    index.number_of_shards: 1
+
+# And we are disabling the ILM feature that caused our original problems.
+setup.ilm.enabled: false
+
+# ================================= Outputs ====================================
+output.elasticsearch:
+  hosts: ["http://elasticsearch:9200"]
+  index: "netguard-%{[log_source]}-7.17.20-%{+yyyy.MM.dd}"
+  ilm.enabled: false
+
+# ================================= Processors =================================
+processors:
+  - add_host_metadata: ~

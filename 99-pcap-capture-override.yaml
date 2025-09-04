@@ -1,0 +1,12 @@
+%YAML 1.1
+---
+
+# Disable the problematic af-packet capture mode entirely.
+af-packet:
+  - interface: default
+    enabled: no
+
+# Enable the standard, more compatible pcap capture mode instead.
+pcap:
+  - interface: default
+    enabled: yes

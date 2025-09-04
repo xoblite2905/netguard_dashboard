@@ -1,0 +1,59 @@
+%YAML 1.1
+---
+# Suricata configuration file
+
+# Set the default log directory
+default-log-dir: /var/log/suricata
+
+# AF_PACKET configuration for high-speed capture
+af-packet:
+  - interface: ens33
+    cluster-id: 99
+    #cluster-type: cluster_none
+    defrag: yes
+    use-mmap: yes
+    tpacket-v3: yes
+    buffer-size: 536870912  # 512MB in bytes
+    checksum-checks: no
+
+outputs:
+  # === ADD THIS SECTION ===
+  # This enables the EVE JSON log, which Filebeat is configured to read.
+  - eve-log:
+      enabled: yes
+      filetype: regular
+      filename: eve.json
+      types:
+        - alert
+        - flow
+        - dns
+        - http
+        - files
+        - tls
+  # === END OF ADDED SECTION ===
+
+  # PCAP logging configuration (This was your existing config, it is correct)
+  - pcap-log:
+      enabled: yes
+      filename: suricata.pcap
+      limit: 100mb
+      max-files: 10
+      # Directory to store PCAPs, which is the mount point of pcap_spool
+      dir: /var/log/suricata/pcaps
+
+# Basic logging
+logging:
+  default-log-format: "%t - %i - %m"
+  default-output: file
+  outputs:
+    - file:
+        enabled: yes
+        filename: suricata.log
+        level: info
+
+# Set the runmode to 'workers'
+runmode: workers
+
+# Define default rule paths, even if no rules are loaded.
+default-rule-path: /etc/suricata/rules
+rule-files: [] # No rules loaded, as the goal is just PCAP capture

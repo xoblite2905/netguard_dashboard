@@ -1,0 +1,38 @@
+# --- Secrets ---
+# Ignore environment files with credentials
+.env
+.env.*
+!.env.example
+
+# --- Logs ---
+# Ignore log files
+*.log
+post_deploy_setup.log
+
+# --- Python ---
+# Ignore Python caches and virtual environments
+__pycache__/
+venv/
+.venv/
+env/
+*.pyc
+
+# --- Node.js ---
+# Ignore Node.js dependency folder
+node_modules/
+package-lock.json
+
+# --- Build Artifacts ---
+# Ignore the frontend build output
+/build
+
+# --- Data & Large Files ---
+# Ignore PCAP files (can contain sensitive data and be large)
+/pcaps/
+*.pcap
+
+# Ignore GeoLite database (can be large, should be downloaded during setup)
+backend/app/data/GeoLite2-Country.mmdb
+
+# --- Docker ---
+# You can add docker-specific ignores if needed later

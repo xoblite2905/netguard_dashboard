@@ -1,0 +1,15 @@
+%YAML 1.1
+---
+pcap-log:
+  enabled: yes
+  filename: test.pcap
+  limit: 10mb
+  max-files: 5
+  dir: /tmp/pcaps
+
+af-packet:
+  - interface: ${IFACE:-ens33}
+    threads: 1
+
+logging:
+  default-log-format: "%t - %i - %m"
